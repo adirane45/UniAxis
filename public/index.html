@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UniAxis Technologies - Web Development, IT Solutions, and Campus Ping SaaS Platform">
+    <meta name="keywords" content="web development, IT support, firewall configuration, UniAxis Technologies">
+    <title>UniAxis Technologies - IT Solutions & Web Development</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%234F46E5'>U</text></svg>">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">UniAxis</span>
+                <span class="logo-sub">Technologies</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#campus-ping" class="nav-link">Campus Ping</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#internships" class="nav-link">Internships</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to UniAxis Technologies</h1>
+            <p class="hero-subtitle">Transforming Ideas into Digital Solutions</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('campus-ping').scrollIntoView({behavior: 'smooth'})">Explore Campus Ping</button>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive IT Solutions for Your Business</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Website Creation</h3>
+                    <p>Modern, responsive websites tailored to your business needs. From static sites to dynamic web applications.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Computer Troubleshooting</h3>
+                    <p>Professional diagnosis and repair of hardware and software issues. Keep your systems running smoothly.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Firewall Configuration</h3>
+                    <p>Secure your network with expert firewall installation and configuration. Protect against cyber threats.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📁</div>
+                    <h3>FTP Installation</h3>
+                    <p>Set up and configure file transfer protocol servers for seamless data exchange and file management.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>System Maintenance</h3>
+                    <p>Regular maintenance and updates to ensure optimal performance and security of your IT infrastructure.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>IT Consultation</h3>
+                    <p>Expert advice on technology solutions, infrastructure planning, and digital transformation strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Ping Section -->
+    <section id="campus-ping" class="campus-ping">
+        <div class="container">
+            <div class="campus-ping-content">
+                <div class="campus-ping-text">
+                    <h2 class="section-title">Campus Ping</h2>
+                    <h3 class="campus-ping-subtitle">Multi-Tenant SaaS Notice Board Platform</h3>
+                    <p class="campus-ping-description">
+                        Our flagship project - Campus Ping is a comprehensive notice board platform designed for educational institutions, 
+                        corporate campuses, and communities. It enables seamless communication between administrators, staff, and users.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Multi-Tenant Architecture</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Real-time Notifications</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>User-Friendly Interface</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Advanced Analytics</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Mobile Responsive</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Enterprise Security</span>
+                        </div>
+                    </div>
+
+                    <div class="launch-info">
+                        <p><strong>🚀 Launching August 2026</strong></p>
+                        <p>Join our beta testing program and be among the first to experience the future of campus communication.</p>
+                    </div>
+
+                    <a href="https://campusping.in" target="_blank" class="btn btn-primary">Visit Campus Ping</a>
+                </div>
+                
+                <div class="campus-ping-visual">
+                    <div class="mock-device">
+                        <div class="device-frame">
+                            <div class="device-header">Campus Ping</div>
+                            <div class="device-content">
+                                <div class="notice-item">📢 Important Notice</div>
+                                <div class="notice-item">📝 Event Announcement</div>
+                                <div class="notice-item">🎓 Academic Update</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About UniAxis</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>
+                        UniAxis Technologies is a forward-thinking IT solutions company dedicated to empowering businesses 
+                        with cutting-edge technology and exceptional service. With a team of skilled professionals, we deliver 
+                        comprehensive solutions spanning web development, IT infrastructure, and custom software solutions.
+                    </p>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide innovative, reliable, and cost-effective technology solutions that help organizations 
+                        achieve their digital transformation goals.
+                    </p>
+                    <h3>Why Choose Us?</h3>
+                    <ul class="benefits-list">
+                        <li>Expert Team with Years of Experience</li>
+                        <li>24/7 Customer Support</li>
+                        <li>Cutting-Edge Technology Stack</li>
+                        <li>Affordable and Scalable Solutions</li>
+                        <li>Proven Track Record</li>
+                    </ul>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years in Business</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section id="internships" class="internships">
+        <div class="container">
+            <h2 class="section-title">Join Our Team</h2>
+            <p class="section-subtitle">Exciting Internship Opportunities</p>
+            
+            <div class="internships-content">
+                <div class="internship-card">
+                    <h3>Web Development Intern</h3>
+                    <p class="internship-type">Technology · 3-6 Months</p>
+                    <p>Learn modern web development with React, Node.js, and more. Work on real projects and gain hands-on experience.</p>
+                    <ul class="skills-required">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React or Vue.js</li>
+                        <li>Git & Version Control</li>
+                    </ul>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>IT Support Intern</h3>
+                    <p class="internship-type">Infrastructure · 3-6 Months</p>
+                    <p>Gain practical experience in network configuration, system administration, and IT troubleshooting.</p>
+                    <ul class="skills-required">
+                        <li>Networking Basics</li>
+                        <li>Windows/Linux Systems</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>Full Stack Intern</h3>
+                    <p class="internship-type">Development · 3-6 Months</p>
+                    <p>Master both frontend and backend technologies. Contribute to end-to-end project development.</p>
+                    <ul class="skills-required">
+                        <li>Frontend Frameworks</li>
+                        <li>Backend Development</li>
+                        <li>Database Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="internship-cta">
+                <h3>Ready to Start Your Journey?</h3>
+                <p>Send your resume and a brief introduction to <strong>careers@uniaxis.tech</strong></p>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@uniaxis.tech">info@uniaxis.tech</a></p>
+                            <p><a href="mailto:careers@uniaxis.tech">careers@uniaxis.tech</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <div>
+                            <h3>Website</h3>
+                            <p><a href="https://uniaxis.tech" target="_blank">uniaxis.tech</a></p>
+                            <p><a href="https://campusping.in" target="_blank">campusping.in</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">💼</div>
+                        <div>
+                            <h3>Follow Us</h3>
+                            <p>Connect with us on social media for updates and insights.</p>
+                            <div class="social-links">
+                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                                <a href="#" aria-label="Twitter">Twitter</a>
+                                <a href="#" aria-label="GitHub">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UniAxis Technologies</h3>
+                    <p>Empowering businesses with innovative IT solutions and digital transformation services.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#campus-ping">Campus Ping</a></li>
+                        <li><a href="#internships">Internships</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@uniaxis.tech">info@uniaxis.tech</a></li>
+                        <li><a href="https://uniaxis.tech" target="_blank">uniaxis.tech</a></li>
+                        <li>Available 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UniAxis Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

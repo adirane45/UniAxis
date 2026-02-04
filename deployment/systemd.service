@@ -1,0 +1,26 @@
+# Systemd Service File for UniAxis Website
+# Save as: /etc/systemd/system/uniaxis.service
+
+[Unit]
+Description=UniAxis Technologies Website
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/uniaxis
+ExecStart=/usr/bin/node /var/www/uniaxis/server.js
+Restart=on-failure
+RestartSec=10
+Environment="NODE_ENV=production"
+Environment="PORT=3000"
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/www/uniaxis
+
+[Install]
+WantedBy=multi-user.target
