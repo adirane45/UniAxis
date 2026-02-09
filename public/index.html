@@ -2,33 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UniAxis Technologies - Web Development, IT Solutions, and Campus Ping SaaS Platform">
-    <meta name="keywords" content="web development, IT support, firewall configuration, UniAxis Technologies">
-    <title>UniAxis Technologies - IT Solutions & Web Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="UniAxis Technologies - Leading IT solutions provider in Jalgaon offering Computer Maintenance, Server Installations, RDP, FTP, Website Design & Hosting, CampusPing platform, and student internships.">
+    <meta name="keywords" content="UniAxis Technologies, Jalgaon IT company, Computer Maintenance, Server Installation, RDP, FTP, Website Design, Website Hosting, CampusPing, Smart Noticeboard, Telegram Bot, Mirror Leech Bot, IT Services Jalgaon, Student Internships">
+    <meta name="author" content="UniAxis Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="UniAxis Technologies - IT Solutions & Innovation">
+    <meta property="og:description" content="Professional IT services including Computer Maintenance, Server Solutions, Web Development, and innovative products like CampusPing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.uniaxis.tech">
+    <meta property="og:image" content="/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UniAxis Technologies - IT Solutions & Innovation">
+    <meta name="twitter:description" content="Professional IT services and innovative solutions in Jalgaon">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "UniAxis Technologies",
+      "url": "https://www.uniaxis.tech",
+      "logo": "/images/logo.svg",
+      "description": "Leading IT solutions provider specializing in computer maintenance, server installations, and innovative products",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jalgaon",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/uniaxis-technologies",
+        "https://twitter.com/uniaxistech"
+      ]
+    }
+    </script>
+    
+    <title>UniAxis Technologies | IT Solutions & Innovation in Jalgaon</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%234F46E5'>U</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%234F46E5'/><stop offset='100%' style='stop-color:%2310B981'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='65' font-size='50' font-weight='bold' fill='white' text-anchor='middle'>U</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">UniAxis</span>
-                <span class="logo-sub">Technologies</span>
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5"/>
+                            <stop offset="100%" style="stop-color:#10B981"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" fill="url(#logoGrad)"/>
+                    <text x="50" y="65" font-size="50" font-weight="bold" fill="white" text-anchor="middle">U</text>
+                </svg>
+                <div class="logo-text-container">
+                    <span class="logo-text">UniAxis</span>
+                    <span class="logo-sub">Technologies</span>
+                </div>
             </div>
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#campus-ping" class="nav-link">Campus Ping</a>
+                <a href="#products" class="nav-link">Products</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#internships" class="nav-link">Internships</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -36,119 +111,370 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Welcome to UniAxis Technologies</h1>
-            <p class="hero-subtitle">Transforming Ideas into Digital Solutions</p>
+            <div class="hero-badge">🚀 Innovating Since 2024</div>
+            <h1 class="hero-title">Transform Your Digital Future with <span class="gradient-text">UniAxis Technologies</span></h1>
+            <p class="hero-subtitle">Your trusted IT partner in Jalgaon for cutting-edge technology solutions, innovative products, and professional services</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('campus-ping').scrollIntoView({behavior: 'smooth'})">Explore Campus Ping</button>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                    Explore Products
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Active Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
             </div>
         </div>
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive IT Solutions for Your Business</p>
+            <p class="section-subtitle">Comprehensive IT Solutions for Your Business in Jalgaon and Beyond</p>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Website Creation</h3>
-                    <p>Modern, responsive websites tailored to your business needs. From static sites to dynamic web applications.</p>
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Website Design & Hosting</h3>
+                    <p>Create stunning, responsive websites with modern UI/UX. From design to deployment, we handle everything including fast and reliable hosting solutions.</p>
+                    <ul class="service-features">
+                        <li>Custom Website Design</li>
+                        <li>Responsive Development</li>
+                        <li>SSL Certificates</li>
+                        <li>99.9% Uptime Hosting</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Computer Troubleshooting</h3>
-                    <p>Professional diagnosis and repair of hardware and software issues. Keep your systems running smoothly.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Computer Maintenance</h3>
+                    <p>Professional computer repair and maintenance services. We diagnose and fix hardware and software issues to keep your systems running at peak performance.</p>
+                    <ul class="service-features">
+                        <li>Hardware Diagnostics & Repair</li>
+                        <li>Software Troubleshooting</li>
+                        <li>Performance Optimization</li>
+                        <li>Regular Maintenance</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Firewall Configuration</h3>
-                    <p>Secure your network with expert firewall installation and configuration. Protect against cyber threats.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Server Installations</h3>
+                    <p>Expert server setup and configuration services. We deploy, configure, and optimize servers for maximum reliability and performance.</p>
+                    <ul class="service-features">
+                        <li>Server Setup & Configuration</li>
+                        <li>Linux & Windows Servers</li>
+                        <li>Database Installation</li>
+                        <li>Security Hardening</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">📁</div>
-                    <h3>FTP Installation</h3>
-                    <p>Set up and configure file transfer protocol servers for seamless data exchange and file management.</p>
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 7h-9"></path>
+                            <path d="M14 17H5"></path>
+                            <circle cx="17" cy="17" r="3"></circle>
+                            <circle cx="7" cy="7" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>RDP Setup</h3>
+                    <p>Remote Desktop Protocol configuration for secure remote access. Work from anywhere with our professional RDP installation and setup services.</p>
+                    <ul class="service-features">
+                        <li>RDP Installation & Config</li>
+                        <li>Secure Access Setup</li>
+                        <li>Multi-User Support</li>
+                        <li>Performance Tuning</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🖥️</div>
-                    <h3>System Maintenance</h3>
-                    <p>Regular maintenance and updates to ensure optimal performance and security of your IT infrastructure.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                            <polyline points="13 2 13 9 20 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>FTP Installations</h3>
+                    <p>File Transfer Protocol server setup for efficient file sharing. Secure, fast, and reliable FTP solutions for your business needs.</p>
+                    <ul class="service-features">
+                        <li>FTP Server Installation</li>
+                        <li>SFTP Security Setup</li>
+                        <li>User Management</li>
+                        <li>Automated Backups</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>IT Consultation</h3>
-                    <p>Expert advice on technology solutions, infrastructure planning, and digital transformation strategies.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Network Security</h3>
+                    <p>Comprehensive network security solutions including firewall configuration, intrusion detection, and security audits to protect your infrastructure.</p>
+                    <ul class="service-features">
+                        <li>Firewall Configuration</li>
+                        <li>Security Audits</li>
+                        <li>Threat Prevention</li>
+                        <li>24/7 Monitoring</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Campus Ping Section -->
-    <section id="campus-ping" class="campus-ping">
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <div class="campus-ping-content">
-                <div class="campus-ping-text">
-                    <h2 class="section-title">Campus Ping</h2>
-                    <h3 class="campus-ping-subtitle">Multi-Tenant SaaS Notice Board Platform</h3>
-                    <p class="campus-ping-description">
-                        Our flagship project - Campus Ping is a comprehensive notice board platform designed for educational institutions, 
-                        corporate campuses, and communities. It enables seamless communication between administrators, staff, and users.
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Innovative Solutions We've Built</p>
+            
+            <!-- CampusPing Product -->
+            <div class="product-showcase">
+                <div class="product-content">
+                    <div class="product-badge">🚀 Launching August-September 2026</div>
+                    <h3 class="product-title">CampusPing</h3>
+                    <p class="product-tagline">Smart Noticeboard Platform for Universities</p>
+                    
+                    <p class="product-description">
+                        CampusPing revolutionizes campus communication with an intelligent digital noticeboard system. 
+                        Designed specifically for universities and educational institutions, it provides a centralized 
+                        platform for announcements, events, and updates with real-time delivery.
                     </p>
                     
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Multi-Tenant Architecture</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Real-time Notifications</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>User-Friendly Interface</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Advanced Analytics</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Mobile Responsive</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Enterprise Security</span>
-                        </div>
-                    </div>
-
-                    <div class="launch-info">
-                        <p><strong>🚀 Launching August 2026</strong></p>
-                        <p>Join our beta testing program and be among the first to experience the future of campus communication.</p>
-                    </div>
-
-                    <a href="https://campusping.in" target="_blank" class="btn btn-primary">Visit Campus Ping</a>
-                </div>
-                
-                <div class="campus-ping-visual">
-                    <div class="mock-device">
-                        <div class="device-frame">
-                            <div class="device-header">Campus Ping</div>
-                            <div class="device-content">
-                                <div class="notice-item">📢 Important Notice</div>
-                                <div class="notice-item">📝 Event Announcement</div>
-                                <div class="notice-item">🎓 Academic Update</div>
+                    <div class="product-features">
+                        <h4>Key Features:</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Multi-Tenant Architecture</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Real-time Notifications</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Department-wise Categorization</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Mobile & Desktop Responsive</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Advanced Analytics Dashboard</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Role-based Access Control</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>File Attachments Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Search & Filter Capabilities</span>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="product-cta">
+                        <a href="https://campusping.in" target="_blank" class="btn btn-primary">
+                            Visit CampusPing
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <p class="beta-text">Join our beta program for early access!</p>
+                    </div>
+                </div>
+                
+                <div class="product-visual">
+                    <div class="product-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">
+                                <div class="mockup-logo">📱 CampusPing</div>
+                                <div class="mockup-status">🟢 Live</div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="notice-card">
+                                    <div class="notice-icon">📢</div>
+                                    <div class="notice-text">
+                                        <h4>Important Notice</h4>
+                                        <p>Exam schedule updated</p>
+                                    </div>
+                                </div>
+                                <div class="notice-card">
+                                    <div class="notice-icon">🎓</div>
+                                    <div class="notice-text">
+                                        <h4>Academic Update</h4>
+                                        <p>New semester begins next week</p>
+                                    </div>
+                                </div>
+                                <div class="notice-card">
+                                    <div class="notice-icon">📅</div>
+                                    <div class="notice-text">
+                                        <h4>Event Announcement</h4>
+                                        <p>Tech fest registration open</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mirror-Leech-Bot Product -->
+            <div class="product-showcase reverse">
+                <div class="product-visual">
+                    <div class="product-mockup bot-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header telegram-header">
+                                <div class="mockup-logo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                    Mirror-Leech Bot
+                                </div>
+                                <div class="mockup-status active">🟢 Active</div>
+                            </div>
+                            <div class="mockup-content telegram-chat">
+                                <div class="chat-bubble">
+                                    <div class="chat-text">/mirror https://example.com/file.zip</div>
+                                </div>
+                                <div class="chat-bubble bot-message">
+                                    <div class="chat-text">✅ Mirroring started...</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-content">
+                    <div class="product-badge active">✅ Currently Active</div>
+                    <h3 class="product-title">Mirror-Leech-Bot</h3>
+                    <p class="product-tagline">Telegram Bot for File Management</p>
+                    
+                    <p class="product-description">
+                        Our powerful Telegram bot that simplifies file downloading, mirroring, and cloud storage operations. 
+                        Mirror-Leech-Bot offers seamless integration with multiple cloud platforms and supports various 
+                        protocols for efficient file management.
+                    </p>
+                    
+                    <div class="product-features">
+                        <h4>Bot Capabilities:</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Multi-Protocol Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Cloud Storage Integration</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Batch Processing</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Real-time Progress Updates</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>User-Friendly Commands</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>24/7 Availability</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-cta">
+                        <a href="https://t.me/your_mirror_leech_bot" target="_blank" class="btn btn-primary telegram-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.11l-6.4 4.03-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.943.11.78.89z"/>
+                            </svg>
+                            Open in Telegram
+                        </a>
+                        <p class="beta-text">Free to use • Open source</p>
                     </div>
                 </div>
             </div>
@@ -158,47 +484,96 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About UniAxis</h2>
+            <h2 class="section-title">About UniAxis Technologies</h2>
+            <p class="section-subtitle">Your Trusted IT Partner in Jalgaon</p>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>
-                        UniAxis Technologies is a forward-thinking IT solutions company dedicated to empowering businesses 
-                        with cutting-edge technology and exceptional service. With a team of skilled professionals, we deliver 
-                        comprehensive solutions spanning web development, IT infrastructure, and custom software solutions.
-                    </p>
-                    <h3>Our Mission</h3>
-                    <p>
-                        To provide innovative, reliable, and cost-effective technology solutions that help organizations 
-                        achieve their digital transformation goals.
-                    </p>
-                    <h3>Why Choose Us?</h3>
-                    <ul class="benefits-list">
-                        <li>Expert Team with Years of Experience</li>
-                        <li>24/7 Customer Support</li>
-                        <li>Cutting-Edge Technology Stack</li>
-                        <li>Affordable and Scalable Solutions</li>
-                        <li>Proven Track Record</li>
-                    </ul>
+                    <div class="about-card">
+                        <h3>🎯 Who We Are</h3>
+                        <p>
+                            UniAxis Technologies is a leading IT solutions provider based in Jalgaon, Maharashtra. 
+                            We specialize in delivering cutting-edge technology services and innovative products that 
+                            empower businesses and educational institutions to thrive in the digital age. Our team of 
+                            experienced professionals is dedicated to providing reliable, efficient, and cost-effective solutions.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3>🚀 Our Mission</h3>
+                        <p>
+                            To transform the IT landscape in Jalgaon and beyond by providing world-class technology 
+                            solutions that drive innovation, enhance productivity, and create lasting value for our clients. 
+                            We aim to bridge the technology gap and make advanced IT services accessible to all.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3>💡 Our Vision</h3>
+                        <p>
+                            To become the most trusted and innovative IT solutions provider in the region, recognized 
+                            for excellence in service delivery, product development, and customer satisfaction. We envision 
+                            a future where every business has access to the technology they need to succeed.
+                        </p>
+                    </div>
+                    
+                    <div class="values-section">
+                        <h3>✨ Why Choose UniAxis?</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <div class="value-icon">🏆</div>
+                                <h4>Expert Team</h4>
+                                <p>Skilled professionals with years of industry experience</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">⚡</div>
+                                <h4>Fast Service</h4>
+                                <p>Quick turnaround times without compromising quality</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🔒</div>
+                                <h4>Security First</h4>
+                                <p>Enterprise-grade security in all our solutions</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">💰</div>
+                                <h4>Affordable Pricing</h4>
+                                <p>Competitive rates with flexible payment options</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">📞</div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock customer support when you need it</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🌟</div>
+                                <h4>Quality Assured</h4>
+                                <p>100% satisfaction guaranteed on all projects</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="stats-grid">
+                <div class="stats-section">
                     <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">30+</div>
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number" data-target="50">0</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Team Members</div>
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Projects Completed</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years in Business</div>
+                        <div class="stat-icon">💼</div>
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Active Products</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Success Rate %</div>
                     </div>
                 </div>
             </div>
@@ -209,47 +584,145 @@
     <section id="internships" class="internships">
         <div class="container">
             <h2 class="section-title">Join Our Team</h2>
-            <p class="section-subtitle">Exciting Internship Opportunities</p>
+            <p class="section-subtitle">Build Your Career with UniAxis Technologies</p>
+            
+            <div class="internship-intro">
+                <p>
+                    We believe in nurturing talent and providing opportunities for students to gain real-world experience. 
+                    At UniAxis Technologies, interns work on actual projects, learn from experienced professionals, and 
+                    develop skills that will accelerate their careers in technology.
+                </p>
+            </div>
             
             <div class="internships-content">
                 <div class="internship-card">
+                    <div class="internship-icon">💻</div>
                     <h3>Web Development Intern</h3>
-                    <p class="internship-type">Technology · 3-6 Months</p>
-                    <p>Learn modern web development with React, Node.js, and more. Work on real projects and gain hands-on experience.</p>
-                    <ul class="skills-required">
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>React or Vue.js</li>
-                        <li>Git & Version Control</li>
-                    </ul>
+                    <p class="internship-type">
+                        <span class="type-badge">Technology</span>
+                        <span class="duration-badge">3-6 Months</span>
+                    </p>
+                    <p>Learn modern web development technologies and work on real client projects. Gain hands-on experience with frontend and backend development.</p>
+                    
+                    <div class="skills-section">
+                        <h4>Required Skills:</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React/Vue</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+                    
+                    <div class="perks-section">
+                        <h4>What You'll Learn:</h4>
+                        <ul>
+                            <li>Modern web frameworks</li>
+                            <li>RESTful API development</li>
+                            <li>Database management</li>
+                            <li>Deployment & hosting</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="internship-card">
+                    <div class="internship-icon">🔧</div>
                     <h3>IT Support Intern</h3>
-                    <p class="internship-type">Infrastructure · 3-6 Months</p>
-                    <p>Gain practical experience in network configuration, system administration, and IT troubleshooting.</p>
-                    <ul class="skills-required">
-                        <li>Networking Basics</li>
-                        <li>Windows/Linux Systems</li>
-                        <li>Problem Solving</li>
-                    </ul>
+                    <p class="internship-type">
+                        <span class="type-badge">Infrastructure</span>
+                        <span class="duration-badge">3-6 Months</span>
+                    </p>
+                    <p>Gain practical experience in network configuration, system administration, server setup, and IT troubleshooting in a professional environment.</p>
+                    
+                    <div class="skills-section">
+                        <h4>Required Skills:</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Linux/Windows</span>
+                            <span class="skill-tag">Hardware</span>
+                            <span class="skill-tag">Troubleshooting</span>
+                        </div>
+                    </div>
+                    
+                    <div class="perks-section">
+                        <h4>What You'll Learn:</h4>
+                        <ul>
+                            <li>Server installation & management</li>
+                            <li>Network configuration</li>
+                            <li>Security best practices</li>
+                            <li>Client support skills</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="internship-card">
-                    <h3>Full Stack Intern</h3>
-                    <p class="internship-type">Development · 3-6 Months</p>
-                    <p>Master both frontend and backend technologies. Contribute to end-to-end project development.</p>
-                    <ul class="skills-required">
-                        <li>Frontend Frameworks</li>
-                        <li>Backend Development</li>
-                        <li>Database Management</li>
-                    </ul>
+                    <div class="internship-icon">🚀</div>
+                    <h3>Full Stack Development Intern</h3>
+                    <p class="internship-type">
+                        <span class="type-badge">Development</span>
+                        <span class="duration-badge">6 Months</span>
+                    </p>
+                    <p>Master both frontend and backend technologies while contributing to our products like CampusPing. Work on end-to-end project development.</p>
+                    
+                    <div class="skills-section">
+                        <h4>Required Skills:</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">JavaScript/TypeScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB/SQL</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                    
+                    <div class="perks-section">
+                        <h4>What You'll Learn:</h4>
+                        <ul>
+                            <li>Full-stack architecture</li>
+                            <li>Microservices design</li>
+                            <li>Cloud deployment</li>
+                            <li>Agile development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="internship-benefits">
+                <h3>🎁 Internship Benefits</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📜</div>
+                        <h4>Certificate</h4>
+                        <p>Official completion certificate</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💵</div>
+                        <h4>Stipend</h4>
+                        <p>Performance-based compensation</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">👨‍🏫</div>
+                        <h4>Mentorship</h4>
+                        <p>Guidance from industry experts</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏢</div>
+                        <h4>PPO Opportunity</h4>
+                        <p>Potential full-time employment</p>
+                    </div>
                 </div>
             </div>
 
             <div class="internship-cta">
                 <h3>Ready to Start Your Journey?</h3>
-                <p>Send your resume and a brief introduction to <strong>careers@uniaxis.tech</strong></p>
-                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+                <p>Join UniAxis Technologies and kickstart your career in technology. We're looking for passionate learners eager to grow.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Apply Now</button>
+                    <a href="mailto:careers@uniaxis.tech" class="btn btn-secondary">
+                        Email: careers@uniaxis.tech
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -258,57 +731,141 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss how we can help your business grow</p>
             
             <div class="contact-content">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
+                <div class="contact-info-section">
+                    <div class="contact-intro">
+                        <h3>Let's Connect</h3>
+                        <p>Have a project in mind or need IT support? We're here to help! Reach out to us through any of the channels below or fill out the contact form.</p>
+                    </div>
+                    
                     <div class="info-item">
-                        <div class="info-icon">📧</div>
-                        <div>
-                            <h3>Email</h3>
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Us</h4>
                             <p><a href="mailto:info@uniaxis.tech">info@uniaxis.tech</a></p>
+                            <p><a href="mailto:support@uniaxis.tech">support@uniaxis.tech</a></p>
                             <p><a href="mailto:careers@uniaxis.tech">careers@uniaxis.tech</a></p>
                         </div>
                     </div>
                     
                     <div class="info-item">
-                        <div class="info-icon">🌐</div>
-                        <div>
-                            <h3>Website</h3>
-                            <p><a href="https://uniaxis.tech" target="_blank">uniaxis.tech</a></p>
-                            <p><a href="https://campusping.in" target="_blank">campusping.in</a></p>
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>Jalgaon, Maharashtra, India</p>
+                            <p>Serving clients across India</p>
                         </div>
                     </div>
                     
                     <div class="info-item">
-                        <div class="info-icon">💼</div>
-                        <div>
-                            <h3>Follow Us</h3>
-                            <p>Connect with us on social media for updates and insights.</p>
-                            <div class="social-links">
-                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                                <a href="#" aria-label="Twitter">Twitter</a>
-                                <a href="#" aria-label="GitHub">GitHub</a>
-                            </div>
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                            <p>24/7 Support Available</p>
                         </div>
                     </div>
+                    
+                    <div class="social-links-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="GitHub" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/your_channel" aria-label="Telegram" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.11l-6.4 4.03-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.943.11.78.89z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="web-design">Website Design & Hosting</option>
+                                    <option value="computer-maintenance">Computer Maintenance</option>
+                                    <option value="server">Server Installation</option>
+                                    <option value="rdp">RDP Setup</option>
+                                    <option value="ftp">FTP Installation</option>
+                                    <option value="campusping">CampusPing</option>
+                                    <option value="internship">Internship Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us more about your requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                                Sending...
+                            </span>
+                        </button>
+                        
+                        <div class="form-message" id="formMessage" style="display: none;"></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -319,29 +876,75 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>UniAxis Technologies</h3>
-                    <p>Empowering businesses with innovative IT solutions and digital transformation services.</p>
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4F46E5"/>
+                                    <stop offset="100%" style="stop-color:#10B981"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="45" fill="url(#footerLogoGrad)"/>
+                            <text x="50" y="65" font-size="50" font-weight="bold" fill="white" text-anchor="middle">U</text>
+                        </svg>
+                        <div>
+                            <h3>UniAxis Technologies</h3>
+                            <p>Innovating the Future of IT</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Leading IT solutions provider in Jalgaon, offering comprehensive technology services and innovative products for businesses and educational institutions.</p>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#campus-ping">Campus Ping</a></li>
-                        <li><a href="#internships">Internships</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#services">Website Design & Hosting</a></li>
+                        <li><a href="#services">Computer Maintenance</a></li>
+                        <li><a href="#services">Server Installations</a></li>
+                        <li><a href="#services">RDP Setup</a></li>
+                        <li><a href="#services">FTP Installations</a></li>
+                        <li><a href="#services">Network Security</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Contact</h3>
+                    <h3>Products</h3>
                     <ul>
-                        <li><a href="mailto:info@uniaxis.tech">info@uniaxis.tech</a></li>
-                        <li><a href="https://uniaxis.tech" target="_blank">uniaxis.tech</a></li>
-                        <li>Available 24/7</li>
+                        <li><a href="#products">CampusPing</a></li>
+                        <li><a href="#products">Mirror-Leech-Bot</a></li>
                     </ul>
+                    <h3 style="margin-top: 1.5rem;">Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#internships">Careers & Internships</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay updated with our latest services and products</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="footer-badges">
+                        <div class="badge-item">🏆 Trusted by 50+ Clients</div>
+                        <div class="badge-item">⚡ 24/7 Support</div>
+                        <div class="badge-item">🔒 100% Secure</div>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 UniAxis Technologies. All rights reserved.</p>
+                <p>&copy; 2026 UniAxis Technologies. All rights reserved. Made with ❤️ in Jalgaon, India</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
