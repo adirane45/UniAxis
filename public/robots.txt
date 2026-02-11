@@ -1,0 +1,36 @@
+# robots.txt for UniAxis Technologies
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.uniaxis.tech/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Allow all bots to access CSS and JS
+User-agent: *
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Block specific bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 30
+
+User-agent: SemrushBot
+Crawl-delay: 30
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
