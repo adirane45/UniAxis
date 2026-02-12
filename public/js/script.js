@@ -1,6 +1,47 @@
 // UniAxis Technologies - JavaScript
 // =====================================
 
+// Global scroll lock management
+let scrollLockCount = 0;
+
+function lockScroll() {
+    scrollLockCount++;
+    if (scrollLockCount === 1) {
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.classList.add('modal-open');
+    }
+}
+
+function unlockScroll() {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) {
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.classList.remove('modal-open');
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+}
+
+// Force unlock on page show (handles back button)
+window.addEventListener('pageshow', function(e) {
+    scrollLockCount = 0;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.classList.remove('modal-open');
+    document.body.classList.remove('menu-open');
+});
+
+// Remove preload class to enable transitions
+window.addEventListener('load', function() {
+    document.body.classList.remove('preload');
+});
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
@@ -59,21 +100,40 @@ function initMobileMenu() {
     
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
+            const isActive = hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (isActive) {
+                document.body.classList.add('menu-open');
+                lockScroll();
+            } else {
+                document.body.classList.remove('menu-open');
+                unlockScroll();
+            }
         });
     }
     
     // Close menu when link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (hamburger) {
+            if (hamburger && hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
-            }
-            if (navMenu) {
                 navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                unlockScroll();
             }
         });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && hamburger && hamburger.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            unlockScroll();
+        }
     });
 }
 
@@ -373,24 +433,22 @@ window.addEventListener('afterprint', () => {
 console.log('UniAxis Technologies - Website loaded successfully');
 
 
-// Update active nav link on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            document.querySelector(`a[href="#${sectionId}"]`)?.classList.add('active');
+// Throttle function for performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
         }
-    });
-});
+    }
+}
+
+// Optimized active nav update (merged to avoid duplicate listeners)
+// Removed - handled in updateActiveNav()
 
 // =====================================
 // TESTIMONIALS CAROUSEL
@@ -629,6 +687,33 @@ if (contactForm) {
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
+}
+
+// Enhanced form validation function
+function validateForm(formData) {
+    const errors = [];
+    
+    // Name validation
+    if (!formData.name || formData.name.trim().length < 2) {
+        errors.push('Name must be at least 2 characters');
+    }
+    
+    // Email validation
+    if (!formData.email || !isValidEmail(formData.email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    // Subject validation
+    if (!formData.subject || formData.subject.trim().length < 3) {
+        errors.push('Subject must be at least 3 characters');
+    }
+    
+    // Message validation
+    if (!formData.message || formData.message.trim().length < 10) {
+        errors.push('Message must be at least 10 characters');
+    }
+    
+    return errors;
 }
 
 // Alert notification
@@ -881,73 +966,7 @@ function displaySearchResults(results, container) {
     });
 }
 
-// ======================================
-//  EXIT INTENT POPUP
-// ======================================
 
-function initExitPopup() {
-    const exitPopup = document.getElementById('exitPopup');
-    const exitClose = exitPopup?.querySelector('.exit-close');
-    const exitForm = exitPopup?.querySelector('.exit-form');
-    
-    if (!exitPopup) return;
-    
-    let hasShownPopup = localStorage.getItem('exitPopupShown');
-    
-    // Show popup on mouse leave (desktop only)
-    if (!hasShownPopup && window.innerWidth > 768) {
-        document.addEventListener('mouseout', (e) => {
-            if (e.clientY < 50 && !hasShownPopup) {
-                exitPopup.classList.add('active');
-                hasShownPopup = true;
-                localStorage.setItem('exitPopupShown', 'true');
-            }
-        });
-    }
-    
-    // Close popup
-    exitClose?.addEventListener('click', () => {
-        exitPopup.classList.remove('active');
-    });
-    
-    exitPopup.addEventListener('click', (e) => {
-        if (e.target === exitPopup) {
-            exitPopup.classList.remove('active');
-        }
-    });
-    
-    // Handle form submission
-    exitForm?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(exitForm);
-        const btn = exitForm.querySelector('.btn-primary');
-        const originalText = btn.textContent;
-        
-        btn.textContent = 'Submitting...';
-        btn.disabled = true;
-        
-        try {
-            // Track event
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'exit_popup_submission', {
-                    event_category: 'Lead Generation',
-                    event_label: 'Exit Intent Popup'
-                });
-            }
-            
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            exitPopup.classList.remove('active');
-            showSuccessMessage('Thank you! We\'ll send you the consultation details via email.');
-            exitForm.reset();
-        } catch (error) {
-            showErrorMessage('Something went wrong. Please try again.');
-        } finally {
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }
-    });
-}
 
 // ======================================
 //  VISITOR COUNTER
@@ -1021,12 +1040,12 @@ function initLightbox() {
         lightboxImg.src = src;
         lightboxCaption.textContent = caption;
         lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        lockScroll();
     }
     
     function closeLightbox() {
         lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        unlockScroll();
     }
     
     closeBtn?.addEventListener('click', closeLightbox);
@@ -1184,11 +1203,11 @@ function openVideoModal(videoUrl) {
     `;
     
     document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden';
+    lockScroll();
     
     const closeModal = () => {
         modal.remove();
-        document.body.style.overflow = '';
+        unlockScroll();
     };
     
     modal.querySelector('.video-modal-close').addEventListener('click', closeModal);
@@ -1227,7 +1246,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     initSearchModal();
-    initExitPopup();
     initVisitorCounter();
     initLightbox();
     initParticles();
@@ -1291,7 +1309,7 @@ function initTouchGestures() {
     let touchStartY = 0;
     let touchEndY = 0;
     
-    const carousels = document.querySelectorAll('.testimonials-carousel, .clients-carousel');
+    const carousels = document.querySelectorAll('.testimonials-carousel');
     
     carousels.forEach(carousel => {
         carousel.addEventListener('touchstart', (e) => {
@@ -1571,3 +1589,205 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// =====================================
+// PERFORMANCE MONITORING & ERROR HANDLING
+// =====================================
+
+// Handle errors gracefully
+window.addEventListener('error', function(e) {
+    console.error('Error caught:', e.error);
+    return true; // Prevents default error handling
+});
+
+// Performance optimization: Passive event listeners
+const passiveSupport = (() => {
+    let passive = false;
+    try {
+        const options = {
+            get passive() {
+                passive = true;
+                return false;
+            }
+        };
+        window.addEventListener('test', null, options);
+        window.removeEventListener('test', null, options);
+    } catch (err) {
+        passive = false;
+    }
+    return passive;
+})();
+
+// Add scroll class for performance
+let scrollTimer;
+window.addEventListener('scroll', function() {
+    document.body.classList.add('scrolling');
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function() {
+        document.body.classList.remove('scrolling');
+    }, 100);
+}, passiveSupport ? { passive: true } : false);
+
+// Detect network status
+window.addEventListener('online', function() {
+    console.log('Connection restored');
+});
+
+window.addEventListener('offline', function() {
+    console.warn('Connection lost');
+});
+
+// Clean up on page unload
+window.addEventListener('beforeunload', function() {
+    // Force unlock scroll in case of any stuck state
+    scrollLockCount = 0;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.classList.remove('modal-open');
+    document.body.classList.remove('menu-open');
+});
+
+// Log when site is ready
+console.log('%c✓ UniAxis Technologies', 'color: #4f46e5; font-size: 20px; font-weight: bold;');
+console.log('%cWebsite loaded successfully', 'color: #10b981; font-size: 14px;');
+console.log('%cAll optimizations active', 'color: #6b7280; font-size: 12px;');
+
+
+// =====================================
+// SCROLL FIX - Emergency Unlock
+// =====================================
+
+// Emergency scroll unlock if page gets stuck
+setInterval(function() {
+    // Check if scroll is locked but no modals are open
+    if (document.body.classList.contains('modal-open')) {
+        const hasActiveModal = document.querySelector('.video-modal.active, .search-modal.active, .lightbox.active, .nav-menu.active');
+        if (!hasActiveModal) {
+            // Force unlock
+            scrollLockCount = 0;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.classList.remove('modal-open');
+            console.log('Emergency scroll unlock triggered');
+        }
+    }
+}, 1000);
+
+// Double-click anywhere to force unlock (dev mode)
+let clickCount = 0;
+let clickTimer = null;
+document.addEventListener('click', function() {
+    clickCount++;
+    if (clickCount === 5) {
+        scrollLockCount = 0;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.classList.remove('modal-open');
+        document.body.classList.remove('menu-open');
+        console.log('Manual scroll unlock (5 clicks)');  
+        clickCount = 0;
+    }
+    
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(function() {
+        clickCount = 0;
+    }, 2000);
+});
+
+// =====================================
+// MISSING BUTTON/EVENT HANDLER FUNCTIONS
+// =====================================
+
+// Search modal functions
+function openSearch() {
+    const searchModal = document.getElementById('searchModal');
+    if (searchModal) {
+        searchModal.classList.add('active');
+        lockScroll();
+        document.getElementById('searchInput')?.focus();
+    }
+}
+
+function closeSearch() {
+    const searchModal = document.getElementById('searchModal');
+    if (searchModal) {
+        searchModal.classList.remove('active');
+        unlockScroll();
+    }
+}
+
+// Video player functions
+let currentVideoUrl = '';
+
+function playVideo(url) {
+    currentVideoUrl = url;
+    const videoModal = document.querySelector('.video-modal');
+    if (!videoModal) {
+        const modal = document.createElement('div');
+        modal.className = 'video-modal active';
+        modal.innerHTML = `
+            <div class="video-container">
+                <button class="modal-close" onclick="closeVideo()">✕</button>
+                <iframe 
+                    src="${url}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        lockScroll();
+    }
+}
+
+function closeVideo() {
+    const videoModal = document.querySelector('.video-modal.active');
+    if (videoModal) {
+        videoModal.remove();
+        unlockScroll();
+    }
+}
+
+// Lightbox functions
+let lightboxImages = [];
+let currentImageIndex = 0;
+
+function openLightbox(imageUrl, imageIndex = 0) {
+    currentImageIndex = imageIndex;
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        if (lightboxImg) {
+            lightboxImg.src = imageUrl;
+            lightbox.classList.add('active');
+            lockScroll();
+        }
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        unlockScroll();
+    }
+}
+
+function nextImage() {
+    if (lightboxImages.length > 0) {
+        currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+        openLightbox(lightboxImages[currentImageIndex], currentImageIndex);
+    }
+}
+
+function prevImage() {
+    if (lightboxImages.length > 0) {
+        currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+        openLightbox(lightboxImages[currentImageIndex], currentImageIndex);
+    }
+}
+
