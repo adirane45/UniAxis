@@ -1451,15 +1451,6 @@ section {
         transform: scale(1);
     }
 
-    .slider-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .slider-container {
-        height: 300px;
-    }
-
     .security-badges {
         flex-direction: column;
         gap: 15px;
@@ -1507,15 +1498,6 @@ section {
     
     .video-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .clients-track {
-        gap: 40px;
-    }
-    
-    .client-logo {
-        width: 120px;
-        height: 50px;
     }
     
     .search-modal-content {
@@ -2092,128 +2074,6 @@ section {
    BEFORE/AFTER PORTFOLIO SLIDER
    ===================================== */
 
-.portfolio-slider {
-    padding: 50px 0;
-    background: var(--bg-secondary);
-    position: relative;
-}
-
-.slider-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.comparison-slider {
-    background: var(--bg-primary);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
-}
-
-.comparison-slider:hover {
-    transform: translateY(-5px);
-}
-
-.slider-label {
-    padding: 15px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    cursor: ew-resize;
-}
-
-.before-image,
-.after-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.before-image img,
-.after-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.after-image {
-    clip-path: inset(0 50% 0 0);
-}
-
-.image-label {
-    position: absolute;
-    top: 15px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 2;
-}
-
-.image-label.before {
-    left: 15px;
-    background: rgba(239, 68, 68, 0.9);
-    color: white;
-}
-
-.image-label.after {
-    right: 15px;
-    background: rgba(16, 185, 129, 0.9);
-    color: white;
-}
-
-.slider-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: ew-resize;
-    z-index: 3;
-}
-
-.slider-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.slider-description {
-    padding: 15px 20px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-}
-
 /* =====================================
    SSL BADGES & SECURITY
    ===================================== */
@@ -2474,72 +2334,6 @@ section {
 .search-result-desc {
     font-size: 0.9rem;
     color: var(--text-secondary);
-}
-
-/* =====================================
-   CLIENT LOGOS CAROUSEL
-   ===================================== */
-
-.clients-section {
-    padding: 40px 0;
-    background: var(--bg-secondary);
-    overflow: hidden;
-}
-
-.clients-title {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.clients-carousel {
-    overflow: hidden;
-    position: relative;
-}
-
-.clients-track {
-    display: flex;
-    gap: 60px;
-    animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.clients-track:hover {
-    animation-play-state: paused;
-}
-
-.client-logo {
-    flex-shrink: 0;
-    width: 150px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: grayscale(100%) opacity(0.6);
-    transition: all 0.3s ease;
-}
-
-.client-logo:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
-}
-
-.client-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
 }
 
 /* =====================================
