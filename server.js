@@ -34,11 +34,24 @@ const contactLimiter = rateLimit({
     message: 'Too many contact submissions from this IP, please try again later.'
 });
 
-// Static files with caching
+// Static files with aggressive caching
 app.use(express.static('public', {
-    maxAge: '1d',
-    etag: false
+    maxAge: '30d',
+    etag: true,
+    lastModified: true
 }));
+
+// Cache control headers
+app.use((req, res, next) => {
+    if (req.path.endsWith('.js') || req.path.endsWith('.css')) {
+        res.set('Cache-Control', 'public, max-age=31536000, immutable'); // 1 year for versioned files
+    } else if (req.path.endsWith('.png') || req.path.endsWith('.jpg') || req.path.endsWith('.webp')) {
+        res.set('Cache-Control', 'public, max-age=31536000'); // 1 year for images
+    } else {
+        res.set('Cache-Control', 'public, max-age=3600'); // 1 hour for HTML
+    }
+    next();
+});
 
 // API routes
 app.use('/api/', apiLimiter);
